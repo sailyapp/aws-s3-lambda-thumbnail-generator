@@ -20,26 +20,26 @@ NOTE: This guide assumes that you're already familiar with AWS & S3.
 3. Click on **Get Started**
 4. From the left menu choose **Configure triggers**
 
-* Choose **S3** from the list of available events/services 
-* Make sure you choose the appropriate **Bucket** name
-* Choose **Put** for event type
-* (optional) Type in a prefix path for images to trigger events for
-* (optional) Choose what type of files to handle (png, jpg, etc..)
-* Enable trigger and click **Next**
+  * Choose **S3** from the list of available events/services 
+  * Make sure you choose the appropriate **Bucket** name
+  * Choose **Put** for event type
+  * (optional) Type in a prefix path for images to trigger events for
+  * (optional) Choose what type of files to handle (png, jpg, etc..)
+  * Enable trigger and click **Next**
 ![alt text](https://s3.amazonaws.com/sailybucket/open-source/aws-s3-lambda-thumbnail-generator/images/configure-triggers.png "Configure triggers")
 
+5. Configuring function 
 
-5. Configuring function
-* Give your function any name you want, add an optional description, and choose **Node.js 4.3** as your runtime
+  * Give your function any name you want, add an optional description, and choose **Node.js 4.3** as your runtime
 ![alt text](https://s3.amazonaws.com/sailybucket/open-source/aws-s3-lambda-thumbnail-generator/images/configure-function.png "Configure function")
  
-* Upload **Thumbnailer.zip** as is
+  * Upload **Thumbnailer.zip** as is
 ![alt text](https://s3.amazonaws.com/sailybucket/open-source/aws-s3-lambda-thumbnail-generator/images/function-code.png "Configure function") 
 
-* Create a new **role**, give it a name, and attach to it **S3 object read-only permission** policy
+  * Create a new **role**, give it a name, and attach to it **S3 object read-only permission** policy
 ![alt text](https://s3.amazonaws.com/sailybucket/open-source/aws-s3-lambda-thumbnail-generator/images/handler.png "Configure function") 
 
-* Hit **Next** then **Create function**, and you're good to go!
+  * Hit **Next** then **Create function**, and you're good to go!
 
 Once you upload an image to your S3 bucket, an event will be triggered and your image will have a thumbnail autoamtically generated for it in a thumbnail folder.
 
@@ -59,11 +59,9 @@ NOTE: Current supported files formats are: 'png', 'jpg', 'jpeg', 'bmp', 'tiff', 
 ##### Output image format
 Modify the following:
 
-*ContentType: "image/**jpg**"*
-
-*dstKey = THUMB_KEY_PREFIX + srcKey.replace(/\.\w+$/, ".**jpg**"),*
-
-*.toBuffer("**jpg**", function(err, buffer) {*
+  * *ContentType: "image/**jpg**"*
+  * *dstKey = THUMB_KEY_PREFIX + srcKey.replace(/\.\w+$/, ".**jpg**"),*
+  * *.toBuffer("**jpg**", function(err, buffer) {*
 
 NOTE: Currently the thumbnails is in JPG format.
 ## Contributions
