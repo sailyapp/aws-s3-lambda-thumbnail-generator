@@ -19,6 +19,7 @@ NOTE: This guide assumes that you're already familiar with AWS & S3.
 ![alt text](https://s3.amazonaws.com/sailybucket/open-source/aws-s3-lambda-thumbnail-generator/images/lambda.png "Lambda logo")
 3. Click on **Get Started**
 4. From the left menu choose **Configure triggers**
+
 * Choose **S3** from the list of available events/services 
 * Make sure you choose the appropriate **Bucket** name
 * Choose **Put** for event type
